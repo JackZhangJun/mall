@@ -64,4 +64,23 @@ public class UmsAdminController {
         List<UmsPermission> permissionList = adminService.getPermissionList(adminId);
         return CommonResult.success(permissionList);
     }
+
+    @ApiOperation("更新指定用户密码")
+    @RequestMapping(value = "/updatepassword/{username}",method = RequestMethod.POST)
+    public CommonResult updateUmsAdminPassword(@PathVariable("username") String username,@RequestParam String password)
+    {
+        CommonResult commonResult;
+        int count = adminService.updatePassword(username,password);
+        if (count ==1)
+        {
+            commonResult = CommonResult.success("");
+        }
+        else
+        {
+            commonResult = CommonResult.failed("更新失败");
+        }
+
+        return commonResult;
+
+    }
 }

@@ -36,5 +36,13 @@ public interface UmsAdminService {
      */
     List<UmsPermission> getPermissionList(Long adminId);
 
+    /**
+     * 修改用户密码
+     * @param username
+     * @param password
+     * @return
+     */
+    int updatePassword(String username,String password);
+
 
 }

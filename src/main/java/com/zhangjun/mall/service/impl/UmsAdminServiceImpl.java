@@ -106,4 +106,14 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public List<UmsPermission> getPermissionList(Long adminId) {
         return umsAdminRoleRelationDao.getPermissionList(adminId);
     }
+
+    @Override
+    public int updatePassword(String username,String password) {
+        UmsAdminExample example = new UmsAdminExample();
+        example.createCriteria().andUsernameEqualTo(username);
+        UmsAdmin admin = umsAdminMapper.selectByExample(example).get(0);
+        String encodePassword = passwordEncoder.encode(password);
+        admin.setPassword(encodePassword);
+        return umsAdminMapper.updateByPrimaryKeySelective(admin);
+    }
 }
