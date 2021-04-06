@@ -73,11 +73,11 @@ public class UmsAdminController {
         int count = adminService.updatePassword(username,password);
         if (count ==1)
         {
-            commonResult = CommonResult.success("");
+            commonResult = CommonResult.success("更新密码成功");
         }
         else
         {
-            commonResult = CommonResult.failed("更新失败");
+            commonResult = CommonResult.failed("更新密码失败");
         }
 
         return commonResult;
