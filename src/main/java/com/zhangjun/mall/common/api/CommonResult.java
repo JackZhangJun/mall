@@ -1,5 +1,9 @@
 package com.zhangjun.mall.common.api;
 
+/**
+ * 通用返回对象
+ * @param <T>
+ */
 public class CommonResult<T> {
 
     private long code;
@@ -24,8 +28,8 @@ public class CommonResult<T> {
     }
 
     /**
-     *
-     * @param data
+     * 成功返回结果
+     * @param data 获取的数据
      * @param <T>
      * @return
      */
@@ -36,9 +40,9 @@ public class CommonResult<T> {
 
 
     /**
-     *
-     * @param data
-     * @param message
+     * 成功返回结果
+     * @param data 获取的数据
+     * @param message 提示信息
      * @param <T>
      * @return
      */
@@ -48,8 +52,8 @@ public class CommonResult<T> {
     }
 
     /**
-     *
-     * @param errorCode
+     * 失败返回结果
+     * @param errorCode 错误码
      * @param <T>
      * @return
      */
@@ -59,8 +63,8 @@ public class CommonResult<T> {
     }
 
     /**
-     *
-     * @param message
+     *  失败返回结果
+     * @param message 提示信息
      * @param <T>
      * @return
      */
@@ -71,7 +75,7 @@ public class CommonResult<T> {
 
 
     /**
-     *
+     * 失败返回结果
      * @param <T>
      * @return
      */
@@ -81,7 +85,7 @@ public class CommonResult<T> {
     }
 
     /**
-     *参数验证失败返回结果
+     * 参数验证失败返回结果
      * @param <T>
      * @return
      */

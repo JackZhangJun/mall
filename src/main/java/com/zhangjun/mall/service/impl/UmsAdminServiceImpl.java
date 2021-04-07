@@ -26,6 +26,7 @@ import java.util.List;
 
 @Service
 public class UmsAdminServiceImpl implements UmsAdminService {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminServiceImpl.class);
 
     @Autowired
